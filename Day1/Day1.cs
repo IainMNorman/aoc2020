@@ -5,10 +5,10 @@
 
     public class Day1 : IDay
     {
-        public void ExecutePart1(string input)
+        public string ExecutePart1(string input)
         {
             var lines = input.ToIntArray();
-            void Loop()
+            string Loop()
             {
                 for (int i = 0; i < lines.Length; i++)
                 {
@@ -16,20 +16,21 @@
                     {
                         if (lines[i] + lines[j] == 2020)
                         {
-                            Console.WriteLine("Answer Day 1 Part 2:" + (lines[i] * lines[j]));
-                            return;
+                            return $"{lines[i] * lines[j]}";
                         }
                     }
                 }
+
+                return "no answer found";
             }
 
-            Loop();
+            return Loop();
         }
 
-        public void ExecutePart2(string input)
+        public string ExecutePart2(string input)
         {
             var lines = input.ToIntArray();
-            void Loop()
+            string Loop()
             {
                 for (int i = 0; i < lines.Length; i++)
                 {
@@ -39,15 +40,16 @@
                         {
                             if (lines[i] + lines[j] + lines[k] == 2020)
                             {
-                                Console.WriteLine("Answer Day 1 Part 2:" + (lines[i] * lines[j] * lines[k]));
-                                return;
+                                return $"{lines[i] * lines[j] * lines[k]}";
                             }
                         }
                     }
                 }
+
+                return "no answer found";
             }
 
-            Loop();
+            return Loop();
         }
     }
 }

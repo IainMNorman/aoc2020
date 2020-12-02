@@ -2,8 +2,8 @@
 {
     public interface IDay
     {
-        void ExecutePart1(string input);
+        string ExecutePart1(string input);
 
-        void ExecutePart2(string input);
+        string ExecutePart2(string input);
     }
 }

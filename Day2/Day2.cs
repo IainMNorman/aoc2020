@@ -2,13 +2,15 @@
 {
     public class Day2 : IDay
     {
-        public void ExecutePart1(string input)
+        public string ExecutePart1(string input)
         {
             var lines = input.ToStringArray();
+            return "not implemented";
         }
 
-        public void ExecutePart2(string input)
+        public string ExecutePart2(string input)
         {
+            return "not implemented";
         }
     }
 }
