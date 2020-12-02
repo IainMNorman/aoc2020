@@ -1,5 +1,6 @@
 ﻿namespace Aoc2020
 {
+    using System;
     using System.Linq;
 
     public static class InputHelper
@@ -21,7 +22,7 @@
 
         public static string[] ToStringArray(this string input)
         {
-            var lines = input.Split("\n").Select(str => str)
+            var lines = input.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(str => str)
            .ToArray();
 
             return lines;

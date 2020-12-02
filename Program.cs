@@ -48,9 +48,9 @@
                 totalMs += stopwatch.ElapsedMilliseconds;
                 Console.WriteLine($"Day {argDay} took {totalMs}ms");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine($"Error fetching Day{argDay} input!");
+                Console.WriteLine($"{ex.Message}");
                 return;
             }
         }
