@@ -39,21 +39,19 @@
 
             var stopwatch = new Stopwatch();
             var totalMs = 0L;
-            Console.WriteLine("Day " + argDay);
-            Console.WriteLine("Starting part 1");
+            Console.WriteLine($"Day {argDay}\n");
             stopwatch.Start();
             var p1 = day.ExecutePart1(input);
             stopwatch.Stop();
             Console.WriteLine("Part 1 answer: " + p1);
             totalMs += stopwatch.ElapsedMilliseconds;
-            Console.WriteLine($"Part 1 took : {stopwatch.ElapsedMilliseconds}ms");
-            Console.WriteLine("Starting part 2");
+            Console.WriteLine($"Run time : {stopwatch.ElapsedMilliseconds}ms\n");
             stopwatch.Reset();
             stopwatch.Start();
             var p2 = day.ExecutePart2(input);
             stopwatch.Stop();
             Console.WriteLine("Part 2 answer: " + p2);
-            Console.WriteLine($"Part 2 took : {stopwatch.ElapsedMilliseconds}ms");
+            Console.WriteLine($"Run time: {stopwatch.ElapsedMilliseconds}ms\n");
             totalMs += stopwatch.ElapsedMilliseconds;
             Console.WriteLine($"Day {argDay} took {totalMs}ms ({stopwatch.ElapsedTicks} ticks)");
         }
