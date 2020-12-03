@@ -29,7 +29,7 @@
 
             try
             {
-                input = await http.GetStringAsync($"https://aocproxy.azurewebsites.net/2020/day/{argDay}/input");                
+                input = await http.GetStringAsync($"https://aocproxy.azurewebsites.net/2020/day/{argDay}/input");
             }
             catch (Exception ex)
             {
@@ -52,10 +52,10 @@
             stopwatch.Start();
             var p2 = day.ExecutePart2(input);
             stopwatch.Stop();
-            Console.WriteLine("Part 1 answer: " + p2);
+            Console.WriteLine("Part 2 answer: " + p2);
             Console.WriteLine($"Part 2 took : {stopwatch.ElapsedMilliseconds}ms");
             totalMs += stopwatch.ElapsedMilliseconds;
-            Console.WriteLine($"Day {argDay} took {totalMs}ms");
+            Console.WriteLine($"Day {argDay} took {totalMs}ms ({stopwatch.ElapsedTicks} ticks)");
         }
     }
 }
