@@ -44,14 +44,14 @@
             var valid = true;
             try
             {
-                var byr = int.Parse(Regex.Match(line, @"byr:(\d\d\d\d)").Groups[1].Value);
-                var iyr = int.Parse(Regex.Match(line, @"iyr:(\d\d\d\d)").Groups[1].Value);
-                var eyr = int.Parse(Regex.Match(line, @"eyr:(\d\d\d\d)").Groups[1].Value);
+                var byr = int.Parse(Regex.Match(line, @"byr:(\d{4})").Groups[1].Value);
+                var iyr = int.Parse(Regex.Match(line, @"iyr:(\d{4})").Groups[1].Value);
+                var eyr = int.Parse(Regex.Match(line, @"eyr:(\d{4})").Groups[1].Value);
                 var hgt = int.Parse(Regex.Match(line, @"hgt:(\d*)(cm|in)").Groups[1].Value);
                 var hgtUnit = Regex.Match(line, @"hgt:(\d*)(cm|in)").Groups[2].Value;
                 var hcl = Regex.Match(line, @"hcl:(#[0-9a-f]{6})").Groups[1].Value;
                 var ecl = Regex.Match(line, @"ecl:(...)").Groups[1].Value;
-                var pid = Regex.Match(line, @"pid:(\d\d\d\d\d\d\d\d\d)(\s|$)").Groups[1].Value;
+                var pid = Regex.Match(line, @"pid:(\d{9})(\s|$)").Groups[1].Value;
 
                 if (byr < 1920 || byr > 2002)
                 {
