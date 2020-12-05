@@ -4,6 +4,7 @@
     using System.Diagnostics;
     using System.Net.Http;
     using System.Threading.Tasks;
+    using Aoc2020.Helpers;
 
     public class Program
     {
