@@ -13,30 +13,22 @@
         public string ExecutePart1(string input)
         {
             var passes = input.ToStringArray();
-
-            return passes.Select(x => this.PassToSeatId(x)).Max().ToString();
+            return passes.Select(x => this.PassToSeatId(x)).ToHashSet<int>().Max().ToString();
         }
 
         public string ExecutePart2(string input)
         {
             var passes = input.ToStringArray();
-            var ints = passes.Select(x => this.PassToSeatId(x)).ToList();
-            ints.Sort();
-
-            var missing = Enumerable.Range(ints.Min(), ints.Count)
+            var ints = passes.Select(x => this.PassToSeatId(x)).ToHashSet<int>().OrderBy(x => x);
+            var missing = Enumerable.Range(ints.Min(), ints.Count())
+                .ToHashSet<int>()
                 .Except(ints).First();
-
             return missing.ToString();
         }
 
         public int PassToSeatId(string pass)
         {
-            pass = pass
-                .Replace('F', '0')
-                .Replace('B', '1')
-                .Replace('L', '0')
-                .Replace('R', '1');
-
+            pass = pass.Replace('F', '0').Replace('B', '1').Replace('L', '0').Replace('R', '1');
             return Convert.ToInt32(pass, 2);
         }
     }
