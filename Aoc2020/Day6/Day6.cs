@@ -10,15 +10,14 @@
         public string ExecutePart1(string input)
         {
             var p1 = input.Split("\n\n")
-                .Sum(x => x.Replace("\n", string.Empty)
-                .Distinct().Count());
+                .Sum(x => x.Replace("\n", string.Empty).Distinct().Count());
 
             return p1.ToString();
         }
 
         public string ExecutePart2(string input)
         {
-            var p2 = input.Split("\n\n", StringSplitOptions.RemoveEmptyEntries)
+            var p2 = input.Split("\n\n")
                 .Select(group => group.Split("\n", StringSplitOptions.RemoveEmptyEntries)
                     .Aggregate<IEnumerable<char>>((prev, next) => prev.Intersect(next)).ToList())
                 .Sum(x => x.Count);
