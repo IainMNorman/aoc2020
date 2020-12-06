@@ -54,7 +54,7 @@
             Console.WriteLine("Part 2 answer: " + p2);
             Console.WriteLine($"Run time: {stopwatch.ElapsedMilliseconds}ms\n");
             totalMs += stopwatch.ElapsedMilliseconds;
-            Console.WriteLine($"Day {argDay} took {totalMs}ms ({stopwatch.ElapsedTicks} ticks)");
+            Console.WriteLine($"Day {argDay} took {totalMs}ms");
         }
     }
 }

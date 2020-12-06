@@ -9,9 +9,9 @@
     {
         public string ExecutePart1(string input)
         {
-            var p1 = input.Split("\n\n", StringSplitOptions.RemoveEmptyEntries)
-                .Select(x => x.Replace("\n", string.Empty).ToCharArray().GroupBy(g => g))
-                .Sum(x => x.Count());
+            var p1 = input.Split("\n\n")
+                .Sum(x => x.Replace("\n", string.Empty)
+                .Distinct().Count());
 
             return p1.ToString();
         }
@@ -20,7 +20,6 @@
         {
             var p2 = input.Split("\n\n", StringSplitOptions.RemoveEmptyEntries)
                 .Select(group => group.Split("\n", StringSplitOptions.RemoveEmptyEntries)
-                    .Select(person => person.ToCharArray())
                     .Aggregate<IEnumerable<char>>((prev, next) => prev.Intersect(next)).ToList())
                 .Sum(x => x.Count);
 
