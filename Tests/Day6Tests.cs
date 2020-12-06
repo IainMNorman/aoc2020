@@ -1,5 +1,7 @@
 ﻿using Aoc2020.Day6;
 
+using Shouldly;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +24,21 @@ namespace Tests
         [Fact]
         public void P1T1()
         {
+            this.day.ExecutePart1(@"abc
 
+a
+b
+c
+
+ab
+ac
+
+a
+a
+a
+a
+
+b".Replace("\r", string.Empty)).ShouldBe("11");
         }
     }
 }
