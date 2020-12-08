@@ -43,7 +43,7 @@
 
         public List<(int, int, string, string)> ProcessInput(string input)
         {
-            var lines = input.ToStringArray();
+            var lines = input.ToLines();
             var list = lines.Select(
                 x => (
                     int.Parse(Regex.Match(x, "^(.*?)-").Groups[1].Value),

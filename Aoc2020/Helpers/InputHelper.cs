@@ -20,7 +20,7 @@
             return lines;
         }
 
-        public static string[] ToStringArray(this string input)
+        public static string[] ToLines(this string input)
         {
             var lines = input.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(str => str)
            .ToArray();

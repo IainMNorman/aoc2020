@@ -6,7 +6,7 @@
     {
         public Map(string input, int cursorX = 0, int cursorY = 0)
         {
-            var lines = input.ToStringArray();
+            var lines = input.ToLines();
 
             this.Cells = new char[lines[0].Length * lines.Length];
             this.Width = lines[0].Length;

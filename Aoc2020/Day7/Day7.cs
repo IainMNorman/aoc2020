@@ -39,7 +39,7 @@
         {
             var re = new Regex(@"(.*?) bags contain(?: (\d+ .*?) bag(?:s)?[,.])*");
 
-            return input.ToStringArray().Select(x => re.Match(x)).ToDictionary(
+            return input.ToLines().Select(x => re.Match(x)).ToDictionary(
                     x => x.Groups[1].Value,
                     x => x.Groups[2].Captures.OfType<Capture>()
                         .Select(x => x.Value.Split(new[] { ' ' }, 2))

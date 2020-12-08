@@ -12,13 +12,13 @@
     {
         public string ExecutePart1(string input)
         {
-            var passes = input.ToStringArray();
+            var passes = input.ToLines();
             return passes.Select(x => this.PassToSeatId(x)).ToHashSet<int>().Max().ToString();
         }
 
         public string ExecutePart2(string input)
         {
-            var passes = input.ToStringArray();
+            var passes = input.ToLines();
             var ints = passes.Select(x => this.PassToSeatId(x)).ToHashSet<int>().OrderBy(x => x);
             var missing = Enumerable.Range(ints.Min(), ints.Count())
                 .ToHashSet<int>()
