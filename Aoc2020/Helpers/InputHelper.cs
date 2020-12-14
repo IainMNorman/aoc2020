@@ -22,7 +22,7 @@
 
         public static string[] ToLines(this string input)
         {
-            var lines = input.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(str => str)
+            var lines = input.Replace("\r", string.Empty).Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(str => str)
            .ToArray();
 
             return lines;
