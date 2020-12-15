@@ -25,7 +25,7 @@ namespace Tests
         [Fact]
         public void Part1Test1()
         {
-            day.ExecutePart1("1,3,2").ShouldBe("1");
+            day.ExecutePart1("0,3,6").ShouldBe("436");
         }
 
         [Fact]
