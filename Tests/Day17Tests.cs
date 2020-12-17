@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Xunit;
 
 namespace Tests
-{   
+{
     public class Day17Tests
     {
         private Day17 day;
@@ -24,8 +24,25 @@ namespace Tests
         [Fact]
         public void Part1Test1()
         {
-            1.ShouldBe(1);
+            var life = new LifeCube(".#.\n..#\n###");
+            for (int i = 0; i < 6; i++)
+            {
+                life.Generation();
+            }
+
+            life.Population.ShouldBe(112);
         }
-        
+
+        [Fact]
+        public void Part2Test1()
+        {
+            var life = new LifeCube4(".#.\n..#\n###");
+            for (int i = 0; i < 6; i++)
+            {
+                life.Generation();
+            }
+
+            life.Population.ShouldBe(848);
+        }
     }
 }
